@@ -42,7 +42,7 @@ const lobby = (roomId, sock, gameName) => {
 		}
 
 	} else {
-		
+		sock.roomtype = gameName
 		sock.roomId = roomId
 		rooms[roomId] = [sock.id]
 		sock.emit('message', 'waiting...')
