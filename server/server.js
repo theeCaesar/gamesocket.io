@@ -28,9 +28,9 @@ const lobby = (roomId, sock, gameName) => {
 			sock.roomId = roomId
 			sock.emit('roomId', roomId)
 			const sock0 = io.sockets.sockets.get(rooms[roomId][0])
-			if (gameName == 'X/O') {
+			if (gameName == 'X/O' && sock0.roomtype == "X/O") {
 				new XOGame(sock0, sock)
-			} else if (gameName == 'RPS') {
+			} else if (gameName == 'RPS' && sock0.roomtype == 'RPS') {
 				new RPSGame(sock0, sock)
 			}{
 				
@@ -42,10 +42,12 @@ const lobby = (roomId, sock, gameName) => {
 		}
 
 	} else {
+		
 		sock.roomId = roomId
 		rooms[roomId] = [sock.id]
 		sock.emit('message', 'waiting...')
 		sock.emit('roomId', roomId)
+		
 	}
 }
 
