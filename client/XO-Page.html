@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- Google Fonts -->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/main2.css">
+</head>
+<body>    
+<!--   <div class='background'></div>
+ -->  
+ <div class="wrapper">
+    <div class="popupmsg">
+      <p></p>
+    </div>
+ 
+    <div class="container">
+         <button class="button-option" p="r1 h1 o1"></button>
+         <button class="button-option" p="r1 h2"></button>
+         <button class="button-option" p="r1 h3 o2"></button>
+         <button class="button-option" p="r2 h1"></button>
+         <button class="button-option" p="r2 h2 o1 o2"></button>
+         <button class="button-option" p="r2 h3"></button>
+         <button class="button-option" p="r3 h1 o2"></button>
+         <button class="button-option" p="r3 h2"></button>
+         <button class="button-option" p="r3 h3 o1"></button>
+     </div>
+     <div id="btn-con">
+      <button id="surrender">surrender</button>
+      <button id="display-chat">Close Chat</button>
+     </div>
+
+   </div>
+     <div class="rps-wrapper" style="display: flex;">
+         <ul id="events"></ul>
+         <div class="controls">
+           <div class="chat-wrapper">
+             <form id="chat-form">
+               <input id="chat" autocomplete="off" title="chat"/>
+               <button id="say">send</button>
+             </form>
+           </div>
+         </div>
+           <div>
+             <p id="room">room id</p>
+           <div class="roomId">
+             <form id="roomId-form">
+               <input id="roomId" autocomplete="off" title="chat"/>
+               <button id="say">send</button>
+             </form>
+           </div>
+       </div>
+     </div>
+
+   
+    <!-- Script -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="src/XOClinet2.js"></script>
+</body>
+</html>
